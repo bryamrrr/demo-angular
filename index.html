@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="miApp">
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body ng-cloak>
   <span>Página de inicio</span>
   <a href="#">Ir al blog</a>
   <h3>{{ 2 + 2 }}</h3>
+  {{ 'Hola mundo' }}
 
-  <section>
+  <section ng-controller="MiControlador">
     <h1>Esta es la página principal.</h1>
+    <p>{{ mensaje }}</p>
+    <article ng-repeat="producto in listaCompras" class="producto">
+      <img ng-src="{{ producto.urlImagen }}" />
+      <h3>{{ producto.nombre }}</h3>
+    </article>
   </section>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
