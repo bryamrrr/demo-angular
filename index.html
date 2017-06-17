@@ -13,10 +13,17 @@
 
   <section ng-controller="MiControlador">
     <h1>Esta es la página principal.</h1>
+    <input type="text" ng-model="mensaje" />
     <p>{{ mensaje }}</p>
-    <article ng-repeat="producto in listaCompras" class="producto">
+    <article
+      ng-repeat="producto in listaCompras | filter:mensaje"
+      class="producto"
+    >
       <img ng-src="{{ producto.urlImagen }}" />
-      <h3>{{ producto.nombre }}</h3>
+      <h3>
+        {{ producto.nombre | lowercase }}
+        <span class="label" ng-show="producto.prioritario">prioritario</span>
+      </h3>
     </article>
   </section>
 

@@ -1,3 +1,21 @@
+.producto {
+  display: inline-block;
+  margin: 1em;
+}
+
 .producto img {
   width: 100px;
+}
+
+.label {
+  background-color: red;
+  border-radius: 5px;
+  color: white;
+  font-size: .35em;
+  text-transform: uppercase;
+  padding: .5em 1em;
+}
+
+input {
+  width: 100%;
 }
